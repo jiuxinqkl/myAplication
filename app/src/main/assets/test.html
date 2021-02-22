@@ -1,0 +1,22 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<body>
+<input id="fileImage" type="file" size="300" onchange="showImage()"  name="fileselect" accept="image/*" />
+<img src="" id="show" width="200">
+<script>
+
+    function showImage() {
+
+        var reads= new FileReader();
+        f=document.getElementById('fileImage').files[0];
+        reads.readAsDataURL(f);
+        reads.onload=function (e) {
+            document.getElementById('show').src=this.result;
+        };
+    }
+
+</script>
+</body>
+
+</html>
